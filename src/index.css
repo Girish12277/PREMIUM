@@ -1,0 +1,269 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 240 20% 99%;
+    --foreground: 240 20% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 8%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-glow: 262 83% 68%;
+    --primary-dark: 262 83% 48%;
+    
+    --secondary: 198 93% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 198 93% 70%;
+
+    --muted: 240 15% 96%;
+    --muted-foreground: 240 8% 46%;
+
+    --accent: 330 81% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 330 81% 70%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 12% 88%;
+    --input: 240 12% 88%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.875rem;
+    
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    --hero-gradient: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(198 93% 60%) 50%, hsl(330 81% 60%) 100%);
+    --hero-glow: linear-gradient(135deg, hsl(262 83% 68% / 0.3) 0%, hsl(198 93% 70% / 0.3) 50%, hsl(330 81% 70% / 0.3) 100%);
+    --card-gradient: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(240 20% 98%) 100%);
+    --card-gradient-hover: linear-gradient(135deg, hsl(262 83% 98%) 0%, hsl(198 93% 98%) 100%);
+    --card-shadow: 0 2px 8px -2px hsl(240 20% 8% / 0.08), 0 4px 16px -4px hsl(240 20% 8% / 0.04);
+    --card-hover-shadow: 0 8px 24px -4px hsl(262 83% 58% / 0.24), 0 16px 48px -8px hsl(198 93% 60% / 0.16), 0 0 0 1px hsl(262 83% 58% / 0.1);
+    --glow-primary: 0 0 60px hsl(262 83% 68% / 0.4);
+    --glow-secondary: 0 0 60px hsl(198 93% 70% / 0.4);
+    --glow-accent: 0 0 60px hsl(330 81% 70% / 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    --molecule-pattern: radial-gradient(circle at 20% 50%, hsl(262 83% 58% / 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 80%, hsl(198 93% 60% / 0.03) 0%, transparent 50%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 25% 8%;
+    --foreground: 240 15% 96%;
+
+    --card: 240 20% 12%;
+    --card-foreground: 240 15% 96%;
+
+    --popover: 240 20% 12%;
+    --popover-foreground: 240 15% 96%;
+
+    --primary: 262 83% 68%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-glow: 262 83% 78%;
+    --primary-dark: 262 83% 58%;
+
+    --secondary: 198 93% 70%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 198 93% 80%;
+
+    --muted: 240 20% 16%;
+    --muted-foreground: 240 10% 60%;
+
+    --accent: 330 81% 70%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 330 81% 80%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 20% 20%;
+    --input: 240 20% 20%;
+    --ring: 262 83% 68%;
+    
+    --card-gradient: linear-gradient(135deg, hsl(240 20% 12%) 0%, hsl(240 20% 14%) 100%);
+    --card-gradient-hover: linear-gradient(135deg, hsl(262 83% 15%) 0%, hsl(198 93% 15%) 100%);
+    --card-shadow: 0 2px 8px -2px hsl(0 0% 0% / 0.4), 0 4px 16px -4px hsl(0 0% 0% / 0.3);
+    --card-hover-shadow: 0 8px 24px -4px hsl(262 83% 68% / 0.3), 0 16px 48px -8px hsl(198 93% 70% / 0.2), 0 0 0 1px hsl(262 83% 68% / 0.15);
+    --glow-primary: 0 0 60px hsl(262 83% 78% / 0.3);
+    --glow-secondary: 0 0 60px hsl(198 93% 80% / 0.3);
+    --glow-accent: 0 0 60px hsl(330 81% 80% / 0.3);
+    
+    --molecule-pattern: radial-gradient(circle at 20% 50%, hsl(262 83% 68% / 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 80%, hsl(198 93% 70% / 0.05) 0%, transparent 50%);
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Better mobile scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Better touch targets for mobile */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Mobile bottom padding for bottom nav */
+  @media (max-width: 768px) {
+    body {
+      padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+  }
+  
+  /* Page padding for mobile nav - applied to main containers */
+  .pb-safe {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0));
+  }
+  
+  @media (min-width: 768px) {
+    .pb-safe {
+      padding-bottom: 0;
+    }
+  }
+  
+  /* Smooth hardware acceleration */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Video player optimizations */
+  video {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  /* Floating animation for molecules */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-10px);
+    }
+    75% {
+      transform: translateY(-30px) translateX(5px);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Fade up animation */
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+  }
+  
+  /* Pulse slow animation */
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Better tap highlights */
+  button, a, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Fullscreen dropdown fix */
+  :fullscreen [role="menu"],
+  :-webkit-full-screen [role="menu"],
+  :-moz-full-screen [role="menu"],
+  :-ms-fullscreen [role="menu"] {
+    z-index: 999999 !important;
+  }
+  
+  /* Ensure portalled elements work in fullscreen */
+  [data-radix-popper-content-wrapper] {
+    z-index: 999999 !important;
+    position: fixed !important;
+  }
+  
+  :fullscreen [data-radix-popper-content-wrapper],
+  :-webkit-full-screen [data-radix-popper-content-wrapper],
+  :-moz-full-screen [data-radix-popper-content-wrapper],
+  :-ms-fullscreen [data-radix-popper-content-wrapper] {
+    z-index: 999999 !important;
+    position: fixed !important;
+  }
+  
+  body:has(:fullscreen) [data-radix-popper-content-wrapper] {
+    z-index: 999999 !important;
+  }
+}
